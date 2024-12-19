@@ -1,6 +1,7 @@
 package com.generation.vehiclesharing.dals;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.generation.vehiclesharing.entities.Veicolo;
 
@@ -13,7 +14,7 @@ public interface VeicoloDao {
 	String INSERT = "Insert into veicolo(categoria, descrizione, alimentazione, indirizzo, coordinate, disponibilita) values(?,?,?,?,?,?)";
 	//CRUD
 		List<Veicolo> getAll(); //read
-		Veicolo getVehicleById(int veicolo_id); //read one
+		Optional<Veicolo> getVehicleById(int veicolo_id); //read one
 		int update(Veicolo veicolo); //update
 		int deletevVehicleById(int veicolo_id); //delete
 		int addVehicle(Veicolo veicolo);//create

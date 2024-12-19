@@ -18,7 +18,7 @@ public class Veicolo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long veicolo_id;
+	private int veicolo_id;
 	
 	@Column(length = 75, nullable = false)
 	private String categoria;
@@ -41,7 +41,7 @@ public class Veicolo {
 		return veicolo_id;
 	}
 
-	public void setVeicolo_id(long veicolo_id) {
+	public void setVeicolo_id(int veicolo_id) {
 		this.veicolo_id = veicolo_id;
 	}
 

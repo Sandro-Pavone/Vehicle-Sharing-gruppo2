@@ -21,7 +21,7 @@ public class Utente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long utente_id;
+	private int utente_id;
 	
 	@Column(length = 75, nullable = true)
 	private String nome;
@@ -46,7 +46,7 @@ public class Utente {
 		return utente_id;
 	}
 
-	public void setUtente_id(long utente_id) {
+	public void setUtente_id(int utente_id) {
 		this.utente_id = utente_id;
 	}
 
