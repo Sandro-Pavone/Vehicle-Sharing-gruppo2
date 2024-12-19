@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.hero-section {
+    padding: 20px 0;
+}
+.vehicle-card {
+    margin-bottom: 20px;
+}
