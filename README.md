@@ -1,2 +1,2 @@
 # Vehicle-Sharing-gruppo2
-Repo FrontEnd per simulazione Project Work JAITA131
+Repo gruppo 2 per simulazione Project Work JAITA131
