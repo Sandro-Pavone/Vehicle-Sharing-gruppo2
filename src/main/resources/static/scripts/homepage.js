@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         availableContainer.innerHTML += `
             <div class="col-md-4 vehicle-card">
                 <div class="card">
-                    <img src="${vehicle.immagine}" class="card-img-top" alt="${vehicle.descrizione}">
+                    <img src="./img/vecteezy_car-automobile-vehicle-abstract-driving-logo_51766749.png" class="card-img-top" alt="${vehicle.descrizione}">
                     <div class="card-body">
                         <h5 class="card-title">Categoria: ${vehicle.categoria}</h5>
                         <p class="card-text">
