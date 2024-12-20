@@ -9,11 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.generation.vehiclesharing.entities.Veicolo;
 import com.generation.vehiclesharing.repositories.VeicoloRepo;
 
-
+@Repository
 public class VeicoloDaoImpl implements VeicoloDao {
 @Autowired
 VeicoloRepo veicoloRepo;
