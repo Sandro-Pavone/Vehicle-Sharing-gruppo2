@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="card-body">
                         <h5 class="card-title">Categoria: ${vehicle.categoria}</h5>
                         <p class="card-text">
-                            Alimentazione: ${vehicle.alimentazione}<br>
-                            Indirizzo: ${vehicle.indirizzo}
+                            <strong>Alimentazione:</strong> ${vehicle.alimentazione}<br>
+                            <strong>Indirizzo:</strong> ${vehicle.indirizzo}
                         </p>
-                        <a href="veicolo.html?id=${vehicle.id}" class="btn btn-primary">Dettagli</a>
+                        <a href="veicolo.html?id=${vehicle.id}" class="btn btn-danger">Dettagli</a>
                     </div>
                 </div>
             </div>`;
@@ -85,10 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="card-body">
                         <h5 class="card-title">Categoria: ${vehicle.categoria}</h5>
                         <p class="card-text">
-                            Alimentazione: ${vehicle.alimentazione}<br>
-                            Indirizzo: ${vehicle.indirizzo}
+                            <strong>Alimentazione:</strong> ${vehicle.alimentazione}<br>
+                           <strong>Indirizzo:</strong> ${vehicle.indirizzo}
+                           lorem30
                         </p>
-                        <a href="veicolo.html?id=${vehicle.id}" class="btn btn-primary">Dettagli</a>
+                        <a href="veicolo.html?id=${vehicle.id}" class="btn btn-danger">Dettagli</a>
                     </div>
                 </div>
             </div>`;

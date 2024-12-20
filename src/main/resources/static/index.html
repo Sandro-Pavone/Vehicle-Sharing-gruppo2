@@ -10,26 +10,60 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Vehicle Sharing</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pannello.html">Pannello</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#"><img id="logo"
+          src="" alt= "Logo"
+          draggable="false" style="height: 30px; background-color: rgb(255, 0, 0);" /> LOGO</a>
+  
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars" style="color: white; border-color: white;"></i>
+      </button>
+      
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+  
+        <form class="d-flex align-items-center w-50 form-search" id="searchForm">
+          <div class="input-group">
+            <input type="search" class="form-control" id="searchInput" placeholder="Search" aria-label="Search" />
+          </div>
+        </form>
+  
+        <ul class="navbar-nav">
+          <li class="nav-item me-3">
+            <a class="nav-link d-flex align-items-center" href="#!">boh</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center me-3" href="#!">
+              <i class="fas fa-bookmark" style="margin-right: 5px;"></i>boh 2
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link d-flex align-items-center" href="login.html">Sign In</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+    
+<!-- Hero -->
+<div class="container-fluid hero" style="max-height: 500px;">
+    <div class="overlay"></div>
+    <img class="object-fit-cover" id="hero-img" src="./img/BRUMBRUM.jpg" alt="" style="height: 500px; width: 100vw" >
+</div>
 
-     <!-- Hero Section with Slider -->
+<!-- Fine Hero -->
+
+<!--
+      Slider 
      <div class="container hero-section">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -46,10 +80,12 @@
                     <h3 class="text-center mt-2">Prenota con facilità!</h3>
                 </div>
             </div>
-            <!-- Pagination -->
+           
+            Pagination 
             <div class="swiper-pagination"></div>
         </div>
     </div>
+-->
 
      <!-- Sezione Veicoli -->
      <div class="container my-5">
@@ -69,13 +105,14 @@
     </div>
 
     
-    <footer class="bg-light text-center py-3">
+    <footer class=" text-center py-3">
+
         <p>&copy; 2024 Vehicle Sharing. Tutti i diritti riservati.</p>
     </footer>
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="scripts/homepage.js"></script>
+    <script src="./scripts/homepage.js"></script>
     </body>
     </html> 
 
