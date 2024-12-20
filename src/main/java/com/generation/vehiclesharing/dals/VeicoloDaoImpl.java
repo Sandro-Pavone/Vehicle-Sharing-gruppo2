@@ -17,6 +17,7 @@ import com.generation.vehiclesharing.repositories.VeicoloRepo;
 public class VeicoloDaoImpl implements VeicoloDao {
 @Autowired
 VeicoloRepo veicoloRepo;
+//prova commit
 	
 	@Override
 	public List<Veicolo> getAll() {
