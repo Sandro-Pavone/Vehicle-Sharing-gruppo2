@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS `utente` (
 PRIMARY KEY (`utente_id`),
 KEY `k_email` (`email`)
 );
-
+select all * from utente;
 -- show create table utente;
-
+truncate table utente;
 INSERT INTO `utente`(nome,cognome,data_nascita,email,password,ruolo)
 VALUES ('Carlo','Verdi','2001-03-19','utente@email.com','utente','UTENTE'),
 ('Paolo','Rossi','1994-06-07','admin@email.com','admin','ADMIN');

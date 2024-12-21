@@ -13,10 +13,10 @@ public interface VeicoloDao {
 	String DELETE = "delete from veicolo where id = ?";
 	String INSERT = "Insert into veicolo(categoria, descrizione, alimentazione, indirizzo, coordinate, disponibilita) values(?,?,?,?,?,?)";
 	//CRUD
-		List<Veicolo> getAll(); //read
-		Optional<Veicolo> getVehicleById(int veicolo_id); //read one
-		int update(Veicolo veicolo); //update
+		public List<Veicolo> getAll(); //read
+		public Optional<Veicolo> getVehicleById(int veicolo_id); //read one
+//		int update(Veicolo veicolo); //update
 		int deletevVehicleById(int veicolo_id); //delete
-		int addVehicle(Veicolo veicolo);//create
-		Veicolo getByCategoria(String string);//read
+		public void addVehicle(Veicolo veicolo);//create
+//		Veicolo getByCategoria(String string);//read
 }

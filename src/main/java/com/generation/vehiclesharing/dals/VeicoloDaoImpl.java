@@ -36,12 +36,12 @@ VeicoloRepo veicoloRepo;
 		return veicoloRepo.findById(veicolo_id);
 	}
 
-	@Override
-	public int update(Veicolo veicolo) {
-		
-		return 0;
-		
-	}
+//	@Override
+//	public int update(Veicolo veicolo) {
+//		
+//		return 0;
+//		
+//	}
 
 	@Override
 	public int deletevVehicleById(int veicolo_id) {
@@ -51,16 +51,16 @@ VeicoloRepo veicoloRepo;
 	}
 
 	@Override
-	public int addVehicle(Veicolo veicolo) {
-		return 0;
+	public void addVehicle(Veicolo veicolo) {
+		veicoloRepo.save(veicolo);
 	
 	}
 
-	@Override
-	public Veicolo getByCategoria(String categoria) {
-		return null;
-	
-	}
+//	@Override
+//	public Veicolo getByCategoria(String categoria) {
+//		return null;
+//	
+//	}
 	
 	
 }
