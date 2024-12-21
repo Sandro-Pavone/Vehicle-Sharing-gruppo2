@@ -92,6 +92,13 @@ body {
     text-align: center;
   }
   
+  .container-inserisci{
+    box-shadow: 0 0 5px 0 ;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
   footer{
     box-shadow: 0 0 5px 0 ;
     background-color: rgba(255, 0, 0, 0.1);
