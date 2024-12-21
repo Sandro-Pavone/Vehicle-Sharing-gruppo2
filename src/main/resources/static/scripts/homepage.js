@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Simulazione dei veicoli disponibili
+    //le categorie vanno riviste nell'impaginazione
     const availableVehicles = [
         {
             id: 1,
@@ -53,6 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
             indirizzo: "Via Milano, Torino",
             immagine: "car2.jpg",
             descrizione: "Toyota Prius Hybrid",
+        },
+        {
+            id: 5,
+            categoria: "Peppa",
+            alimentazione: "Vegana",
+            indirizzo: "Via dai coglioni",
+            immagine: "car2.jpg",
+            descrizione: "Yokopoko Mayoko",
+        },
+        {
+            id: 6,
+            categoria: "Veneta",
+            alimentazione: "A bestemmie",
+            indirizzo: "Zioporco, Venezia",
+            immagine: "car2.jpg",
+            descrizione: "Va ciaparatt",
         }
     ];
 
@@ -60,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const availableContainer = document.getElementById("available-vehicles");
     availableVehicles.forEach(vehicle => {
         availableContainer.innerHTML += `
-            <div class="col-md-4 vehicle-card">
+            <div class="col-md-3 vehicle-card">
                 <div class="card">
                     <img src="./img/vecteezy_car-automobile-vehicle-abstract-driving-logo_51766749.png" class="card-img-top" alt="${vehicle.descrizione}">
                     <div class="card-body">
@@ -76,12 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Popola la sezione "Veicoli in Noleggio"
+    //sostituire immagini con ${vehicle.immagine}
     const rentedContainer = document.getElementById("rented-vehicles");
     rentedVehicles.forEach(vehicle => {
         rentedContainer.innerHTML += `
-            <div class="col-md-4 vehicle-card">
+            <div class="col-md-3 vehicle-card">
                 <div class="card">
-                    <img src="${vehicle.immagine}" class="card-img-top" alt="${vehicle.descrizione}">
+                    <img src="./img/vecteezy_car-automobile-vehicle-abstract-driving-logo_51766749.png" class="card-img-top" alt="${vehicle.descrizione}">
                     <div class="card-body">
                         <h5 class="card-title">Categoria: ${vehicle.categoria}</h5>
                         <p class="card-text">

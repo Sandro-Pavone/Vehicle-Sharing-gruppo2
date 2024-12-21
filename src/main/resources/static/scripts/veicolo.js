@@ -104,9 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (vehicle) {
         // Veicolo trovato: Mostra la card
+        //immagine di prova, sostituire con ${vehicle.immagine}
         vehicleInfoContainer.innerHTML = `
             <div class="card vehicle-card shadow-sm">
-                <img src="${vehicle.immagine}" class="card-img-top" alt="${vehicle.descrizione}">
+                <img src="./img/MrBean.jpg" class="card-img-top" alt="${vehicle.descrizione}">
                 <div class="card-body">
                     <h5 class="card-title">${vehicle.descrizione}</h5>
                     <p class="card-text mb-2">
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <strong>Indirizzo:</strong> ${vehicle.indirizzo}<br>
                     </p>
                     ${vehicle.disponibile 
-                        ? `<button class="btn btn-success w-100">Prenota</button>` 
+                        ? `<button class="btn btn-success" style="width:200px">Prenota</button>` 
                         : `<span class="badge bg-danger d-block w-100 py-2">Non Disponibile</span>`}
                 </div>
             </div>

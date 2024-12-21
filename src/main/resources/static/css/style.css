@@ -1,12 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene eventuali scroll orizzontali */
 }
 
 .navbar {
     box-shadow: 0 0 5px 0 ;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     width: 100vw;
@@ -17,6 +21,7 @@ body {
     }
 }
 
+/*
 .overlay {
     position: absolute;
     top: 0;
@@ -24,20 +29,19 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-    z-index: 1; /* Assicurati che sia sopra l'immagine */
-    pointer-events: none; /* L'overlay non interferisce con l'interazione */
-  }
+    z-index: 1;  Assicurati che sia sopra l'immagine 
+    pointer-events: none; /* L'overlay non interferisce con l'interazione 
+  }*/
 
 .hero{
     overflow: hidden; 
     position: relative;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombra morbida */
-    border-radius: 10px; /* Aggiunge angoli arrotondati */
 }
 
 #hero-img{
     object-position: bottom;
-  
+    display: block;
 }
 
 .hero-section {
@@ -48,13 +52,17 @@ body {
 .vehicle-card {
     max-width: 1000px;
     padding: 0;
-    margin: 0 10px 0 10px;
+    margin: 0;
     border: 1px solid #ddd; /* Bordo sottile */
     border-radius: 10px; /* Angoli arrotondati */
     overflow: hidden; /* Taglia contenuti che eccedono i bordi */
     transition: transform 0.3s, box-shadow 0.3s; /* Effetto hover */
   }
   
+  .card-body{
+    height: 250px;
+  }
+
   .vehicle-card:hover {
     transform: scale(1.03); /* Leggero ingrandimento */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Ombra più evidente */
@@ -88,6 +96,7 @@ body {
     box-shadow: 0 0 5px 0 ;
     background-color: rgba(255, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 100vw;
     height: 70px;
     z-index: 100; 
