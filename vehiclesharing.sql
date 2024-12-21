@@ -35,11 +35,11 @@ PRIMARY KEY (`veicolo_id`)
 -- drop table veicolo;
 -- show create table veicolo;
 -- truncate table veicolo;
- select * from veicolo;
+-- select * from veicolo;
 INSERT INTO `veicolo`(categoria,descrizione,alimentazione,indirizzo,coordinate,disponibilita,immagine)
-VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386,7.5113506', TRUE, ''),
-('motociclo','Kawasaki Z900','diesel','Corso Unione Sovietica 34, Torino','45.0133568,7.6164037',FALSE, ''),
-('bicicletta','HAIBIKE ALLTRAIL','elettrica','Via Pietro Ferrero, Torino','45.05526657026985,7.616357395711968',TRUE,''),
-('furgone','Fiat Fiorino','metano','Via Cesare Battisti 2B, San Mauro Torinese TO','45.1003189,7.7642173',FALSE,'');
+VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386,7.5113506', TRUE, '/static/img/MrBean.jpg'),
+('motociclo','Kawasaki Z900','diesel','Corso Unione Sovietica 34, Torino','45.0133568,7.6164037',FALSE, '/static/img/MrBean.jpg'),
+('bicicletta','HAIBIKE ALLTRAIL','elettrica','Via Pietro Ferrero, Torino','45.05526657026985,7.616357395711968',TRUE,'/static/img/MrBean.jpg'),
+('furgone','Fiat Fiorino','metano','Via Cesare Battisti 2B, San Mauro Torinese TO','45.1003189,7.7642173',FALSE,'/static/img/MrBean.jpg');
 
 -- fino a qui
