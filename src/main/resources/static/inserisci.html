@@ -10,8 +10,10 @@
     <style>
         body{
           background-image: url("img/BRUMBRUM.jpg");
+          background-size: cover;
         }
         h1{
+            padding-top: 2rem;
             color: white;
         }
         label{
@@ -22,7 +24,7 @@
 <body>
     <div class="container my-5 container-inserisci">
         <h1>Inserisci Nuovo Veicolo</h1>
-        <form id="vehicleForm" class="mt-4">
+        <form id="vehicleForm" class="mt-4" style="padding-bottom: 2rem;">
             <!-- Categoria -->
             <div class="mb-3">
                 <label for="categoria" class="form-label"><strong>Categoria Veicolo</strong></label>
@@ -71,9 +73,15 @@
             <!-- Bottone Inserisci -->
             <button type="submit" class="btn btn-primary">Inserisci Veicolo</button>
             <!-- Bottone Logout -->
-            <button type="button" class="btn btn-danger" id="logout">Logout</button>
+            <button type="button" class="btn btn-danger" id="logout";">Logout</button>
         </form>
     </div>
+    
+    <footer class=" text-center py-3">
+
+        <p>&copy; 2024 Vehicle Sharing. Tutti i diritti riservati.</p>
+    </footer>
+
     <script src="./scripts/inserisci.js"></script>
 </body>
 </html>
