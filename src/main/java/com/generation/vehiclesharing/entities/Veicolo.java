@@ -1,6 +1,5 @@
 package com.generation.vehiclesharing.entities;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,33 +7,34 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity 
+@Entity
 @Table(name = "veicolo")
 public class Veicolo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int veicolo_id;
-	
+
 	@Column(length = 75, nullable = false)
 	private String categoria;
-	
+
 	@Column(length = 100, nullable = false)
 	private String descrizione;
-	
+
 	@Column(length = 20, nullable = true)
 	private String alimentazione;
-	
+
 	@Column(length = 100, nullable = false)
 	private String indirizzo;
-	
+
 	@Column(length = 50, nullable = false)
 	private String coordinate;
-	
-	@Column(length = 255)
-	private String immagine;
-	
 
+	@Column(name = "disponibilita", columnDefinition = "TINYINT(1)")
+	private boolean disponibilita;
+
+	@Column(length = 255, nullable = false)
+	private String immagine;
 
 	public long getVeicolo_id() {
 		return veicolo_id;
@@ -84,18 +84,27 @@ public class Veicolo {
 		this.coordinate = coordinate;
 	}
 
-	
+	public String getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(String immagine) {
+		this.immagine = immagine;
+	}
+
+	public boolean isDisponibilita() {
+		return disponibilita;
+	}
+
+	public void setDisponibilita(boolean disponibilita) {
+		this.disponibilita = disponibilita;
+	}
 
 	@Override
 	public String toString() {
 		return "Veicolo [veicolo_id=" + veicolo_id + ", categoria=" + categoria + ", descrizione=" + descrizione
 				+ ", alimentazione=" + alimentazione + ", indirizzo=" + indirizzo + ", coordinate=" + coordinate
-				+ "]";
+				+ ", immagine=" + immagine + "]";
 	}
-	
-	
 
-	
-	
-	
 }
