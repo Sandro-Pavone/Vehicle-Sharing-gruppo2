@@ -53,6 +53,7 @@ public class VeicoloController {
 	}
 	@Autowired
 	VeicoloRepo vr;
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteVeicolo(@PathVariable Integer id) throws RuntimeException {
 	    Veicolo veicolo = vr.findById(id)

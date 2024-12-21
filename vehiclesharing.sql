@@ -43,3 +43,24 @@ VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386
 ('furgone','Fiat Fiorino','metano','Via Cesare Battisti 2B, San Mauro Torinese TO','45.1003189,7.7642173',FALSE,'/static/img/MrBean.jpg');
 
 -- fino a qui
+
+create table if not exists `prenotazioni` (
+`id` int not null auto_increment,
+`id_utente` int not null,
+`id_veicolo` int not null,
+`data_inizio` datetime,
+`data_fine` datetime,
+`stato_prenotazione` varchar(20),
+`modifiche` varchar(50),
+PRIMARY KEY (`id`),
+foreign key (id_utente) references utente(utente_id),
+foreign key (id_veicolo) references veicolo(veicolo_id)
+);
+-- truncate table prenotazioni;
+-- drop table prenotazioni;
+-- desc prenotazioni;
+-- select * from prenotazioni;
+
+
+
+
