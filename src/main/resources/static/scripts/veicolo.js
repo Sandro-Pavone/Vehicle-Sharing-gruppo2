@@ -1,4 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Simulazione dei dati dei veicoli
     const vehicles = [
         {
@@ -54,22 +54,21 @@
     // Aggiungi i dettagli del veicolo alla pagina
     const vehicleInfoContainer = document.getElementById("vehicle-info");
     vehicleInfoContainer.innerHTML = `
-          <div class="card vehicle-card shadow-sm">
-        <img src="${vehicle.immagine}" class="card-img-top" alt="${vehicle.descrizione}">
-        <div class="card-body">
-        <h5 class="card-title text-primary">Categoria: ${vehicle.categoria}</h5>
-            <p class="card-text mb-2">
-                <strong>Alimentazione:</strong> ${vehicle.alimentazione}<br>
-                <strong>Indirizzo:</strong> ${vehicle.indirizzo}<br>
-                <strong>Descrizione:</strong> ${vehicle.descrizione}
-            </p>
-        ${vehicle.disponibile 
-            ? `<button class="btn btn-success w-100">Prenota</button>` 
-            : `<span class="badge bg-danger d-block w-100 py-2">Non Disponibile</span>`}
-  </div>
-</div>`
+            <div class="card vehicle-card shadow-sm">
+                <img src="./img/MrBean.jpg" class="card-img-top" alt="${vehicle.descrizione}">
+                <div class="card-body" style="height: auto!important">
+                    <h5 class="card-title">${vehicle.descrizione}</h5>
+                    <p class="card-text mb-2">
+                        <strong>Alimentazione:</strong> ${vehicle.alimentazione}<br>
+                        <strong>Indirizzo:</strong> ${vehicle.indirizzo}<br>
+                    </p>
+                    ${vehicle.disponibile 
+                        ? `<button class="btn btn-success" style="width:200px">Prenota</button>` 
+                        : `<span class="badge bg-danger d-block w-100 py-2">Non Disponibile</span>`}
+                </div>
+            </div>`
 });
-*/
+/*
 document.addEventListener("DOMContentLoaded", () => {
     // Dati fake dei veicoli
     const vehicles = [
@@ -108,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         vehicleInfoContainer.innerHTML = `
             <div class="card vehicle-card shadow-sm">
                 <img src="./img/MrBean.jpg" class="card-img-top" alt="${vehicle.descrizione}">
-                <div class="card-body">
+                <div class="card-body" style="height: auto!important">
                     <h5 class="card-title">${vehicle.descrizione}</h5>
                     <p class="card-text mb-2">
                         <strong>Alimentazione:</strong> ${vehicle.alimentazione}<br>
@@ -128,4 +127,4 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
     }
-});
+}); */
