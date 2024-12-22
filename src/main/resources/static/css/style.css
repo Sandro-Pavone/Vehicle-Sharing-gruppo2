@@ -111,6 +111,15 @@ body {
     color: white;
   }
 
+  .container-prenotazioni{
+    margin-top: 100px;
+    width: 50vw;
+    color: white;
+    .card-body{
+      height: auto;
+    }
+  }
+
   footer{
     box-shadow: 0 0 5px 0 ;
     background-color: rgba(255, 0, 0, 0.1);
@@ -125,4 +134,7 @@ body {
     .login-card{
       width: 80vw;
       }
+     .container-prenotazioni{
+      width: 80vw;
+     } 
   }
