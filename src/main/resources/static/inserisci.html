@@ -22,7 +22,53 @@
       </style>
 </head>
 <body>
-    <div class="container my-5 container-inserisci">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#"><img id="logo"
+          src="" alt= "Logo"
+          draggable="false" style="height: 30px; background-color: rgb(255, 0, 0);" /> </a>
+  
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars" style="color: white; border-color: white;"></i>
+      </button>
+      
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+  
+        <form class="d-flex align-items-center w-50 form-search" id="searchForm">
+          <div class="input-group">
+            <input type="search" class="form-control" id="searchInput" placeholder="Search" aria-label="Search" />
+          </div>
+        </form>
+  
+        <ul class="navbar-nav">
+          <li class="nav-item me-3">
+            <a class="nav-link d-flex align-items-center" href="#!">boh</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center me-3" href="#!">
+              <i class="fas fa-bookmark" style="margin-right: 5px;"></i>boh 2
+            </a>
+          </li>
+          <li>
+            <button type="button" class="btn" id="logout">Logout</button>
+          </li>
+        </ul>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+
+    <div class="container container-inserisci">
         <h1>Inserisci Nuovo Veicolo</h1>
         <form id="vehicleForm" class="mt-4" style="padding-bottom: 2rem;">
             <!-- Categoria -->
@@ -73,7 +119,7 @@
             <!-- Bottone Inserisci -->
             <button type="submit" class="btn btn-primary">Inserisci Veicolo</button>
             <!-- Bottone Logout -->
-            <button type="button" class="btn btn-danger" id="logout";">Logout</button>
+            <button type="button" class="btn btn-danger" id="logout">Logout</button>
         </form>
     </div>
     
