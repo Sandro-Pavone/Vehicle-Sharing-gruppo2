@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -33,8 +34,14 @@ public class Veicolo {
 	@Column(name = "disponibilita", columnDefinition = "TINYINT(1)")
 	private boolean disponibilita;
 
-	@Column(length = 255, nullable = false)
-	private String immagine;
+//	@Column(length = 255, nullable = false)
+//	private String immagine;
+	
+	@Lob
+	private byte[] immagine;
+	
+	
+	
 
 	public long getVeicolo_id() {
 		return veicolo_id;
@@ -84,14 +91,24 @@ public class Veicolo {
 		this.coordinate = coordinate;
 	}
 
-	public String getImmagine() {
+//	public String getImmagine() {
+//		return immagine;
+//	}
+//
+//	public void setImmagine(String immagine) {
+//		this.immagine = immagine;
+//	}
+	
+	
+
+	public byte[] getImmagine() {
 		return immagine;
 	}
 
-	public void setImmagine(String immagine) {
+	public void setImmagine(byte[] immagine) {
 		this.immagine = immagine;
 	}
-
+	
 	public boolean isDisponibilita() {
 		return disponibilita;
 	}

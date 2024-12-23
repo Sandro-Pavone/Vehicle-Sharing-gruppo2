@@ -27,6 +27,8 @@ VeicoloRepo veicoloRepo;
 		veicolo.setCategoria( rs.getString("categoria"));
 		veicolo.setDescrizione(rs.getString("descrizione"));
 		veicolo.setCoordinate( rs.getString("coordinate"));
+		veicolo.setDisponibilita(rs.getBoolean("disponibilita"));
+		veicolo.setImmagine(rs.getBytes("immagine"));
 //		veicolo.setDisponibilita(((ResultSet) rs).getEnum("disponibilita", DisponibilitaVeicoli.class));
 		
 	}
@@ -51,8 +53,9 @@ VeicoloRepo veicoloRepo;
 	}
 
 	@Override
-	public void addVehicle(Veicolo veicolo) {
-		veicoloRepo.save(veicolo);
+	public Veicolo addVehicle(Veicolo veicolo) {
+		Veicolo veicoloSalvato = veicoloRepo.save(veicolo);
+		return veicoloSalvato;
 	
 	}
 

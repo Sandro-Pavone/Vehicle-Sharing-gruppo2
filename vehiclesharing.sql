@@ -23,13 +23,14 @@ VALUES ('Carlo','Verdi','2001-03-19','utente@email.com','utente','UTENTE'),
 
 CREATE TABLE IF NOT EXISTS `veicolo`(
 `veicolo_id` int NOT NULL AUTO_INCREMENT,
-`categoria` varchar(75) NOT NULL,
+`categoria` varchar(75),
 `descrizione` varchar(100) NOT NULL,
-`alimentazione` varchar(20) DEFAULT NULL,
+`alimentazione` varchar(20),
 `indirizzo` varchar(100) NOT NULL,
-`coordinate` varchar(50) NOT NULL,
-`disponibilita` tinyint NOT NULL,
-`immagine` varchar(255) DEFAULT '',
+`coordinate` varchar(50),
+`disponibilita` tinyint,
+-- `immagine` varchar(255) DEFAULT '',
+`immagine` longblob,
 PRIMARY KEY (`veicolo_id`)
 );
 -- drop table veicolo;
@@ -37,10 +38,10 @@ PRIMARY KEY (`veicolo_id`)
 -- truncate table veicolo;
 -- select * from veicolo;
 INSERT INTO `veicolo`(categoria,descrizione,alimentazione,indirizzo,coordinate,disponibilita,immagine)
-VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386,7.5113506', TRUE, '/static/img/MrBean.jpg'),
-('motociclo','Kawasaki Z900','diesel','Corso Unione Sovietica 34, Torino','45.0133568,7.6164037',FALSE, '/static/img/MrBean.jpg'),
-('bicicletta','HAIBIKE ALLTRAIL','elettrica','Via Pietro Ferrero, Torino','45.05526657026985,7.616357395711968',TRUE,'/static/img/MrBean.jpg'),
-('furgone','Fiat Fiorino','metano','Via Cesare Battisti 2B, San Mauro Torinese TO','45.1003189,7.7642173',FALSE,'/static/img/MrBean.jpg');
+VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386,7.5113506', TRUE, LOAD_FILE('/static/img/MrBean.jpg')),
+('motociclo','Kawasaki Z900','diesel','Corso Unione Sovietica 34, Torino','45.0133568,7.6164037',FALSE, LOAD_FILE('/static/img/MrBean.jpg')),
+('bicicletta','HAIBIKE ALLTRAIL','elettrica','Via Pietro Ferrero, Torino','45.05526657026985,7.616357395711968',TRUE,LOAD_FILE('/static/img/MrBean.jpg')),
+('furgone','Fiat Fiorino','metano','Via Cesare Battisti 2B, San Mauro Torinese TO','45.1003189,7.7642173',FALSE,LOAD_FILE('/static/img/MrBean.jpg'));
 
 -- fino a qui
 
@@ -60,6 +61,8 @@ foreign key (id_veicolo) references veicolo(veicolo_id)
 -- drop table prenotazioni;
 -- desc prenotazioni;
 -- select * from prenotazioni;
+
+-- - ATTENZIONE - lascio un memo per tutti: valutare di gestire le coordinate con POINT invece che con un varchar
 
 
 
