@@ -1,0 +1,1 @@
+gestire il reset della disponibilità dei veicoli a seguito di una/tutte prenotazione/i rimossa

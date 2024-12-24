@@ -24,6 +24,11 @@ public class HtmlCtrl {
 		
 	}
 	
+	@GetMapping("/prova2")
+	public String prova2() {
+		return "prova2";
+	}
+	
 	
 	
 	

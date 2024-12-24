@@ -46,7 +46,7 @@ VeicoloRepo veicoloRepo;
 //	}
 
 	@Override
-	public int deletevVehicleById(int veicolo_id) {
+	public int deleteVehicleById(int veicolo_id) {
 		return 0;
 		
 	

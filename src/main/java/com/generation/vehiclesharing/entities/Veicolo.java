@@ -43,7 +43,7 @@ public class Veicolo {
 	
 	
 
-	public long getVeicolo_id() {
+	public int getVeicolo_id() {
 		return veicolo_id;
 	}
 

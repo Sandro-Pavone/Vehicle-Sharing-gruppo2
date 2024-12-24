@@ -36,7 +36,7 @@ PRIMARY KEY (`veicolo_id`)
 -- drop table veicolo;
 -- show create table veicolo;
 -- truncate table veicolo;
--- select * from veicolo;
+ select * from veicolo;
 INSERT INTO `veicolo`(categoria,descrizione,alimentazione,indirizzo,coordinate,disponibilita,immagine)
 VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386,7.5113506', TRUE, LOAD_FILE('/static/img/MrBean.jpg')),
 ('motociclo','Kawasaki Z900','diesel','Corso Unione Sovietica 34, Torino','45.0133568,7.6164037',FALSE, LOAD_FILE('/static/img/MrBean.jpg')),
