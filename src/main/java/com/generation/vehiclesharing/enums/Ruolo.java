@@ -7,7 +7,7 @@ public enum Ruolo {
 	    		return "ADMIN";
 	    	}
 	    },
-	    USER {
+	    UTENTE {
 	    	@Override
 	    	public String toString() {
 	    		return "USER";

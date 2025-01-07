@@ -1,126 +1,89 @@
-<!-- amministratore che può registrare ed eliminare veicoli -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserisci Veicolo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
     <style>
-        body{
-          background-image: url("img/BRUMBRUM.jpg");
-          background-size: cover;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-      </style>
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <!-- Container wrapper -->
-    <div class="container">
-      <!-- Navbar brand -->
-      <a class="navbar-brand" href="#"><img id="logo"
-          src="" alt= "Logo"
-          draggable="false" style="height: 30px; background-color: rgb(255, 0, 0);" /> </a>
-  
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fa-solid fa-bars" style="color: white; border-color: white;"></i>
-      </button>
-      
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-  
-        <form class="d-flex align-items-center w-50 form-search" id="searchForm">
-          <div class="input-group">
-            <input type="search" class="form-control" id="searchInput" placeholder="Search" aria-label="Search" />
-          </div>
-        </form>
-  
-        <ul class="navbar-nav">
-          <li class="nav-item me-3">
-            <a class="nav-link d-flex align-items-center" href="#!">boh</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center me-3" href="#!">
-              <i class="fas fa-bookmark" style="margin-right: 5px;"></i>boh 2
-            </a>
-          </li>
-          <li>
-            <button type="button" class="btn" id="logout">Logout</button>
-          </li>
-        </ul>
-      </div>
-      <!-- Collapsible wrapper -->
-    </div>
-    <!-- Container wrapper -->
-  </nav>
-  <!-- Navbar -->
+    <div class="form-container">
+        <h2>Inserisci un Nuovo Veicolo</h2>
+        <form id="vehicleForm" enctype="multipart/form-data">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria">
+                <option value="auto">Auto</option>
+                <option value="motociclo">Motociclo</option>
+                <option value="camper">Camper</option>
+                <option value="bicicletta">Bicicletta</option>
+                <option value="monopattino">Monopattino</option>
+                
+            </select>
 
-    <div class="container container-inserisci">
-        <h1>Inserisci Nuovo Veicolo</h1>
-        <form id="vehicleForm" class="mt-4" style="padding-bottom: 2rem;">
-            <!-- Categoria -->
-            <div class="mb-3">
-                <label for="categoria" class="form-label"><strong>Categoria Veicolo</strong></label>
-                <input type="text" class="form-control" id="categoria" required>
-            </div>
-            <!-- Descrizione -->
-            <div class="mb-3">
-                <label for="descrizione" class="form-label"><strong>Descrizione</strong></label>
-                <textarea class="form-control" id="descrizione" rows="3" required></textarea>
-            </div>
-            <!-- Alimentazione -->
-            <div class="mb-3">
-                <label for="alimentazione" class="form-label"><strong>Alimentazione</strong></label>
-                <select class="form-select" id="alimentazione" required>
-                    <option value="Benzina">Benzina</option>
-                    <option value="Diesel">Diesel</option>
-                    <option value="Elettrico">Elettrico</option>
-                    <option value="Ibrido">Ibrido</option>
-                </select>
-            </div>
-            <!-- Indirizzo -->
-            <div class="mb-3">
-                <label for="indirizzo" class="form-label"><strong>Indirizzo</strong></label>
-                <input type="text" class="form-control" id="indirizzo">
-            </div>
-            <!-- Coordinate GPS -->
-            <div class="mb-3">
-                <label for="gps" class="form-label"><strong>Coordinate GPS</strong></label>
-                <input type="text" class="form-control" id="gps" placeholder="Latitudine, Longitudine">
-            </div>
-            <!-- Disponibilità -->
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="disponibile">
-                <label class="form-check-label" for="disponibile">Disponibile per il noleggio</label>
-            </div>
-            <!-- Immagine -->
-            <div class="mb-3">
-                <label for="immagine" class="form-label"><strong>Carica Immagine</strong></label>
-                <input type="file" class="form-control" id="immagine">
-            </div>
-            <!-- URL Esterno -->
-            <div class="mb-3">
-                <label for="url" class="form-label"><strong>URL Ricerca Indirizzo (Opzionale)</strong></label>
-                <input type="url" class="form-control" id="url" placeholder="https://www.openstreetmap.org/">
-            </div>
-            <!-- Bottone Inserisci -->
-            <button type="submit" class="btn btn-primary">Inserisci Veicolo</button>
-            <!-- Bottone Logout -->
-            <button type="button" class="btn btn-danger" id="logout">Logout</button>
+            <label for="descrizione">Descrizione</label>
+            <textarea id="descrizione" name="descrizione" rows="4" required></textarea>
+
+            <label for="alimentazione">Alimentazione</label>
+            <input type="text" id="alimentazione" name="alimentazione">
+
+            <label for="indirizzo">Indirizzo</label>
+            <input type="text" id="indirizzo" name="indirizzo" required>
+
+            <label for="coordinate">Coordinate (latitudine, longitudine)</label>
+            <input type="text" id="coordinate" name="coordinate">
+
+            <label for="disponibilita">Disponibilità</label>
+            <select id="disponibilita" name="disponibilita">
+                <option value="disponibile">Disponibile</option>
+                <option value="non_disponibile">Non Disponibile</option>
+            </select>
+
+            <label for="image">Carica immagine</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <button type="submit">Aggiungi Veicolo</button>
         </form>
+
+        <button class="bottoneGet">Bottone GET</button>
+
+        <!-- <div id="result" class="result" style="display: none;">
+            <h3>Veicolo aggiunto con successo!</h3>
+            <p>ID Veicolo: <span id="veicoloId"></span></p>
+        </div> -->
     </div>
+
     
-    <footer class=" text-center py-3">
-
-        <p>&copy; 2024 Vehicle Sharing. Tutti i diritti riservati.</p>
-    </footer>
-
-    <script src="./scripts/inserisci.js"></script>
+    
+    <script src="/scripts/inserisci.js"></script>
 </body>
 </html>

@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS `utente` (
 PRIMARY KEY (`utente_id`),
 KEY `k_email` (`email`)
 );
-select all * from utente;
+-- select all * from utente;
 -- show create table utente;
-truncate table utente;
+-- truncate table utente;
 INSERT INTO `utente`(nome,cognome,data_nascita,email,password,ruolo)
 VALUES ('Carlo','Verdi','2001-03-19','utente@email.com','utente','UTENTE'),
 ('Paolo','Rossi','1994-06-07','admin@email.com','admin','ADMIN');
@@ -36,7 +36,7 @@ PRIMARY KEY (`veicolo_id`)
 -- drop table veicolo;
 -- show create table veicolo;
 -- truncate table veicolo;
--- select * from veicolo;
+ select * from veicolo;
 INSERT INTO `veicolo`(categoria,descrizione,alimentazione,indirizzo,coordinate,disponibilita,immagine)
 VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386,7.5113506', TRUE, LOAD_FILE('/static/img/MrBean.jpg')),
 ('motociclo','Kawasaki Z900','diesel','Corso Unione Sovietica 34, Torino','45.0133568,7.6164037',FALSE, LOAD_FILE('/static/img/MrBean.jpg')),
@@ -47,20 +47,20 @@ VALUES ('auto','Ferrari Enzo','benzina','Via Torino 80, Airasca, TO','44.9234386
 
 create table if not exists `prenotazioni` (
 `id` int not null auto_increment,
-`id_utente` int not null,
-`id_veicolo` int not null,
+`utente_id` int not null,
+`veicolo_id` int not null,
 `data_inizio` datetime,
 `data_fine` datetime,
 `stato_prenotazione` varchar(20),
 `modifiche` varchar(50),
 PRIMARY KEY (`id`),
-foreign key (id_utente) references utente(utente_id),
-foreign key (id_veicolo) references veicolo(veicolo_id)
+foreign key (utente_id) references utente(utente_id),
+foreign key (veicolo_id) references veicolo(veicolo_id)
 );
 -- truncate table prenotazioni;
--- drop table prenotazioni;
+ drop table prenotazioni;
 -- desc prenotazioni;
--- select * from prenotazioni;
+ select * from prenotazioni;
 
 -- - ATTENZIONE - lascio un memo per tutti: valutare di gestire le coordinate con POINT invece che con un varchar
 

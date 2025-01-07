@@ -19,22 +19,23 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.generation.vehiclesharing.ResourceNotFoundException;
 import com.generation.vehiclesharing.dals.VeicoloDaoImpl;
+import com.generation.vehiclesharing.entities.Utente;
 import com.generation.vehiclesharing.entities.Veicolo;
 import com.generation.vehiclesharing.repositories.VeicoloRepo;
+
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/veicoli")
 public class VeicoloController {
 	@Autowired
 	VeicoloDaoImpl vdi;
-	
-//	@CrossOrigin(origins = "http://127.0.0.1:5502")
+
 	@GetMapping
 	public List<Veicolo> getAll() {
 		return vdi.getAll();
 	}
-	
-//	@CrossOrigin(origins = "http://127.0.0.1:5502")
+
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getVeicoloById(@PathVariable("id") int veicolo_id) {
 		Optional<Veicolo> optional = vdi.getVehicleById(veicolo_id);
@@ -43,115 +44,61 @@ public class VeicoloController {
 		} else {
 			return ResponseEntity.badRequest().body("Veicolo non trovato");
 		}
-	
+
 	}
-	
-//	@PostMapping
-//	public ResponseEntity<?> addVeicolo(@RequestBody Veicolo veicolo)
-//	{
-//		try {
-//			vdi.addVehicle(veicolo);
-//			
-//			return ResponseEntity.ok(veicolo);
-//		} catch (Exception e) {
-//			return ResponseEntity.internalServerError().body(new Veicolo());
-//		}
-//	}
-	
-	
-//	@CrossOrigin(origins = "http://127.0.0.1:5502")
+
 	@PostMapping
-	public ResponseEntity<?> addVeicolo(
-	    @RequestParam("categoria")
-	    String categoria,
-	    @RequestParam("descrizione")
-	    String descrizione,
-	    @RequestParam("alimentazione")
-	    String alimentazione,
-	    @RequestParam("indirizzo")
-	    String indirizzo,
-	    @RequestParam("coordinate")
-	    String coordinate,
-//	    @RequestParam("disponibilita")
-//	    String disponibilitaStr,
-	    @RequestParam("disponibilita")
-	    boolean disponibilita,
-	    @RequestParam(value = "image", required = false)
-	    MultipartFile immagine) {
-	    
-	    try {
-	    	
-	    	System.out.println("Ricevuto veicolo: " + categoria + ", " + descrizione);
-	    	System.out.println("Disponibilità: " + disponibilita);
-	    	System.out.println("Coordinate: " + coordinate);
-	    	
-	    	byte[] imageBytes = null;
-	        if (immagine != null && !immagine.isEmpty()) {
-	            imageBytes = immagine.getBytes();
-	        }
-	    	
-//	    	Boolean disponibilita = "disponibile".equals(disponibilitaStr);
-	        
-	        Veicolo veicolo = new Veicolo();
-	        veicolo.setCategoria(categoria);
-	        veicolo.setDescrizione(descrizione);
-	        veicolo.setAlimentazione(alimentazione);
-	        veicolo.setIndirizzo(indirizzo);
-	        veicolo.setCoordinate(coordinate);
-	        veicolo.setDisponibilita(disponibilita);
-//	        veicolo.setImmagine(image.getBytes());
-//	        byte[] imageBytes = immagine.getBytes();
-	        veicolo.setImmagine(imageBytes);
+	public ResponseEntity<?> addVeicolo(@RequestParam("categoria") String categoria,
+			@RequestParam("descrizione") String descrizione, @RequestParam("alimentazione") String alimentazione,
+			@RequestParam("indirizzo") String indirizzo, @RequestParam("coordinate") String coordinate,
+			@RequestParam("disponibilita") boolean disponibilita,
+			@RequestParam(value = "image", required = false) MultipartFile immagine) {
 
-	        
-	        Veicolo veicoloAggiunto = vdi.addVehicle(veicolo);
-	        
-//	        return ResponseEntity.ok(veicoloAggiunto);
-	        return ResponseEntity.status(HttpStatus.CREATED).body(veicoloAggiunto);
-	    } catch (Exception e) {
-	    	e.printStackTrace();
-	    	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-	                 .body("Errore durante l'inserimento del veicolo: " + e.getMessage());
-	    }
+		try {
+
+			System.out.println("Ricevuto veicolo: " + categoria + ", " + descrizione);
+			System.out.println("Disponibilità: " + disponibilita);
+			System.out.println("Coordinate: " + coordinate);
+
+			byte[] imageBytes = null;
+			if (immagine != null && !immagine.isEmpty()) {
+				imageBytes = immagine.getBytes();
+			}
+
+			Veicolo veicolo = new Veicolo();
+			veicolo.setCategoria(categoria);
+			veicolo.setDescrizione(descrizione);
+			veicolo.setAlimentazione(alimentazione);
+			veicolo.setIndirizzo(indirizzo);
+			veicolo.setCoordinate(coordinate);
+			veicolo.setDisponibilita(disponibilita);
+			veicolo.setImmagine(imageBytes);
+
+			Veicolo veicoloAggiunto = vdi.addVehicle(veicolo);
+
+			return ResponseEntity.status(HttpStatus.CREATED).body(veicoloAggiunto);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.body("Errore durante l'inserimento del veicolo: " + e.getMessage());
+		}
 	}
-	
-//	@PostMapping
-//	public ResponseEntity<?> addVeicolo(@RequestBody Veicolo veicolo) {
-//	    try {
-//	        // Stampa per verificare i dati ricevuti
-//	        System.out.println("Ricevuto veicolo: " + veicolo);
-//
-//	        // Salvataggio nel database
-//	        Veicolo veicoloAggiunto = vdi.addVehicle(veicolo);
-//
-//	        // Risposta
-//	        return ResponseEntity.status(HttpStatus.CREATED).body(veicoloAggiunto);
-//	    } catch (Exception e) {
-//	        e.printStackTrace();
-//	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-//	                .body("Errore durante l'inserimento del veicolo: " + e.getMessage());
-//	    }
-//	}
 
-
-	
-	
-	
 	@Autowired
 	VeicoloRepo vr;
-	
+
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteVeicolo(@PathVariable Integer id) throws RuntimeException {
-	    Veicolo veicolo = vr.findById(id)
-	        .orElseThrow(() -> new ResourceNotFoundException("Veicolo non trovato con ID: " + id));
-	    vr.delete(veicolo);
-	    return ResponseEntity.noContent().build();
+		Veicolo veicolo = vr.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Veicolo non trovato con ID: " + id));
+		vr.delete(veicolo);
+		return ResponseEntity.noContent().build();
 	}
-	
+
 	@DeleteMapping
 	public ResponseEntity<Void> deleteAll() {
 		vr.deleteAll();
-		
+
 		return ResponseEntity.noContent().build();
 	}
 }

@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Sharing - Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Sharing - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <!-- Container wrapper -->
     <div class="container">
       <!-- Navbar brand -->
-      <a class="navbar-brand" href="#"><img id="logo"
-          src="" alt= "Logo"
-          draggable="false" style="height: 30px; background-color: rgb(255, 0, 0);" /> </a>
-  
+      <a class="navbar-brand" href="#"><img id="logo" src="" alt="Logo" draggable="false"
+          style="height: 30px; background-color: rgb(255, 0, 0);" /> </a>
+
       <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars" style="color: white; border-color: white;"></i>
       </button>
-      
+
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-  
+
         <form class="d-flex align-items-center w-50 form-search" id="searchForm">
           <div class="input-group">
             <input type="search" class="form-control" id="searchInput" placeholder="Search" aria-label="Search" />
           </div>
         </form>
-  
+
         <ul class="navbar-nav">
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link d-flex align-items-center" href="login.html">Sign In</a>
           </li>
         </ul>
@@ -45,16 +45,52 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
-    
-<!-- Hero -->
-<div class="container-fluid hero" style="max-height: 500px; padding: 0;">
+
+  
+  
+  
+  <!-- PROVA -->
+
+  <h2 style="margin-top: 10rem;">Benvenuto!</h2>
+
+  <!-- Se l'utente è un admin -->
+  <div th:if="${ruolo == T(com.generation.vehiclesharing.enums.Ruolo).ADMIN}">
+    <h3>Benvenuto, Admin!</h3>
+    <p>Hai accesso a funzionalità amministrative.</p>
+    <a href="/adminDashboard">Vai al Dashboard Admin</a>
+    <a href="/logout">Logout</a>
+  </div>
+
+  <!-- Se l'utente è un normale utente -->
+  <div th:if="${ruolo == T(com.generation.vehiclesharing.enums.Ruolo).UTENTE}">
+    <h3>Benvenuto, Utente!</h3>
+    <p>Hai accesso alla tua area personale.</p>
+    <a href="/userProfile">Vai al Profilo Utente</a>
+    <a href="/logout">Logout</a>
+  </div>
+
+  <!-- Se l'utente non è loggato -->
+  <div th:if="${ruolo == null}">
+    <h3>Benvenuto, Visitatore!</h3>
+    <p>Sei nella pagina pubblica. Per accedere a contenuti protetti, effettua il login.</p>
+    <a href="/login">Login</a>
+  </div>
+
+  <!-- FINE PROVA -->
+
+
+
+
+
+ <!-- Hero -->
+  <div class="container-fluid hero" style="max-height: 500px; padding: 0; margin-top: 10rem;">
     <div class="overlay"></div>
-    <img class="object-fit-cover" id="hero-img" src="./img/BRUMBRUM.jpg" alt="" style="height: 500px; width: 100vw" >
-</div>
+    <img class="object-fit-cover" id="hero-img" src="./img/BRUMBRUM.jpg" alt="" style="height: 500px; width: 100vw">
+  </div>
 
-<!-- Fine Hero -->
+  <!-- Fine Hero -->
 
-<!--
+  <!--
       Slider 
      <div class="container hero-section">
         <div class="swiper-container">
@@ -79,33 +115,32 @@
     </div>
 -->
 
-     <!-- Sezione Veicoli -->
-     <div class="container my-5">
-        <h2 class="text-center">Veicoli Disponibili</h2>
-        <div class="row d-flex justify-content-around" id="available-vehicles" style="row-gap: 3rem;">
-            <!-- Template Card Dynamico -->
-            <!-- Ogni card rappresenta un veicolo -->
-        </div>
+  <!-- Sezione Veicoli -->
+  <div class="container my-5">
+    <h2 class="text-center">Veicoli Disponibili</h2>
+    <div class="row d-flex justify-content-around" id="available-vehicles" style="row-gap: 3rem;">
+      <!-- Template Card Dynamico -->
+      <!-- Ogni card rappresenta un veicolo -->
     </div>
+  </div>
 
-    <!-- Sezione Veicoli in Noleggio -->
-    <div class="container my-5">
-        <h2 class="text-center">Veicoli in Noleggio</h2>
-        <div class="row d-flex justify-content-around" id="rented-vehicles">
-            <!-- Template Card Dynamico -->
-        </div>
+  <!-- Sezione Veicoli in Noleggio -->
+  <div class="container my-5">
+    <h2 class="text-center">Veicoli in Noleggio</h2>
+    <div class="row d-flex justify-content-around" id="rented-vehicles">
+      <!-- Template Card Dynamico -->
     </div>
+  </div>
 
-    
-    <footer class=" text-center py-3">
 
-        <p>&copy; 2024 Vehicle Sharing. Tutti i diritti riservati.</p>
-    </footer>
- 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="./scripts/homepage.js"></script>
-    </body>
-    </html> 
+  <footer class=" text-center py-3">
 
-    
+    <p>&copy; 2024 Vehicle Sharing. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="/scripts/index.js"></script>
+</body>
+
+</html>

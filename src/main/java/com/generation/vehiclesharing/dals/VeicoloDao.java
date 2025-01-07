@@ -16,7 +16,7 @@ public interface VeicoloDao {
 		public List<Veicolo> getAll(); //read
 		public Optional<Veicolo> getVehicleById(int veicolo_id); //read one
 //		int update(Veicolo veicolo); //update
-		int deletevVehicleById(int veicolo_id); //delete
+		int deleteVehicleById(int veicolo_id); //delete
 		public Veicolo addVehicle(Veicolo veicolo);//create
 //		Veicolo getByCategoria(String string);//read
 }
